@@ -34,7 +34,7 @@ def data_visualization():
     st.header("Deutsche Bahn Data Analysis")
     
     zf = zipfile.ZipFile('Mai-August_Departures-2.csv (1).zip') 
-    data = pd.read_csv(zf.open('Mai-August_Arrivals-2.csv'))
+    data = pd.read_csv(zf.open('Mai-August_Departures-2.csv'))
     data['departure']=data['von (Abfahrt)'].apply(lambda x:x.split('(ab ')[1].split(')')[0])
     data['Delay']=data['Abfahrt'].apply(lambda x:int(x.split('(')[1][:-1]) if('(' in x)  else 0)
 
