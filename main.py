@@ -35,7 +35,7 @@ def data_visualization():
     data = pd.read_csv(zf.open('Mai-August_Departures-2.csv'))
 
     zf2 = zipfile.ZipFile('Mai-August_Arrivals-2.csv (1).zip') 
-    data2 = pd.read_csv(zf.open('Mai-August_Departures-2.csv'))
+    data2 = pd.read_csv(zf.open('Mai-August_Arrivals-2.csv'))
 
     #datatotal = data2.merge(data, on='Zugnr.')
 
