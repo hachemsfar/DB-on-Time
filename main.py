@@ -35,7 +35,7 @@ def data_visualization():
     
     zf = zipfile.ZipFile('Mai-August_Arrivals-2.csv (1).zip') 
     df = pd.read_csv(zf.open('Mai-August_Arrivals-2.csv'))
-        
+    st.write(data)
 
 def prediction():
     st.header("Prediction")
