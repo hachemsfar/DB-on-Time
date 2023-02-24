@@ -39,10 +39,10 @@ def data_visualization():
     zf2 = zipfile.ZipFile('Mai-August_Arrivals-2.csv (1).zip') 
     data2 = pd.read_csv(zf.open('Mai-August_Departures-2.csv'))
 
-    datatotal = data2.merge(data, on='Zugnr.')
+    #datatotal = data2.merge(data, on='Zugnr.')
 
-    datatotal['departure']=datatotal['von (Abfahrt)'].apply(lambda x:x.split('(ab ')[1].split(')')[0])
-    datatotal['Delay']=datatotal['Abfahrt'].apply(lambda x:int(x.split('(')[1][:-1]) if('(' in x)  else 0)
+    #datatotal['departure']=datatotal['von (Abfahrt)'].apply(lambda x:x.split('(ab ')[1].split(')')[0])
+    #datatotal['Delay']=datatotal['Abfahrt'].apply(lambda x:int(x.split('(')[1][:-1]) if('(' in x)  else 0)
 
     #st.write(datatotal)
 
