@@ -6,9 +6,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 from collections import defaultdict
-import glob
 from datetime import datetime
-from neuralprophet import NeuralProphet
 
 hide_streamlit_style = """
             <style>
