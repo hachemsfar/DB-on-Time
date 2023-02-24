@@ -1,6 +1,7 @@
 #Library to create dashboard
 import streamlit as st
 import pandas as pd
+import zipfile
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
@@ -31,9 +32,9 @@ def data_visualization():
     st.header("Data Sources:")
     st.image("deutsche bahn.png")
     st.header("Deutsche Bahn Data Analysis")
-
-
-
+    
+    zf = zipfile.ZipFile('Mai-August_Arrivals-2.csv (1).zip') 
+    df = pd.read_csv(zf.open('Mai-August_Arrivals-2.csv'))
         
 
 def prediction():
