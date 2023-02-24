@@ -29,7 +29,7 @@ def data_visualization():
     st.header("Technologies Used:")
     st.image("logos.png")
     st.header("Data Sources:")
-    st.image("companylogos.PNG")
+    st.image("deutsche bahn.png")
     st.header("Deutsche Bahn Data Analysis")
 
 
