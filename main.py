@@ -44,7 +44,7 @@ def data_visualization():
     datatotal['departure']=datatotal['von (Abfahrt)'].apply(lambda x:x.split('(ab ')[1].split(')')[0])
     datatotal['Delay']=datatotal['Abfahrt'].apply(lambda x:int(x.split('(')[1][:-1]) if('(' in x)  else 0)
 
-    st.write(datatotal)
+    #st.write(datatotal)
 
 def prediction():
     st.header("Prediction")
