@@ -64,7 +64,7 @@ def data_visualization():
         if trip_id_filter!=[]:
             datatotal=datatotal[datatotal['Zugnr.'].isin(trip_id_filter)]
             
-        filter_date_month=filter_date[:7]
+        filter_date_month=str(filter_date[:7])
         datatotal_month=datatotal[datatotal['date'].contain(str(filter_date_month))]
         datatotal=datatotal[datatotal['date']==str(filter_date)]
     
