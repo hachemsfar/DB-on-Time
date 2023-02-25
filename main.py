@@ -74,8 +74,8 @@ def data_visualization():
     st.header("Histogram of Delay for Train Journeys in Germany")
    
     fig1,ax1=plt.subplots(figsize=(11,7))
-    ax1.hist(datatotal["Delay"], bins=50)
-    ax1.set_xlabel("Delay (minutes)")
+    ax1.hist(datatotal["Arrival Delay"], bins=50)
+    ax1.set_xlabel("Arrival Delay (minutes)")
     ax1.set_ylabel("Frequency")
     st.pyplot(fig1)
             
