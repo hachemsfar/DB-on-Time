@@ -32,11 +32,22 @@ def data_visualization():
     st.header("Deutsche Bahn Data Analysis")
     
     zf = zipfile.ZipFile('Mai-August_Departures-2.csv (1).zip') 
-    data = pd.read_csv(zf.open('Mai-August_Departures-2.csv'))
+    data = pd.read_csv(zf.open('Mai-August_Departures-2.csv'),usecols=['Abfahrt','nach (Ankunft)','Abfahrtsbhf.','date','Zugnr.'])
+
+    data['Final Station']=data['nach (Ankunft)'].apply(lambda x:x.split(' (')[0])
+    data['Expected Arrival']=data['nach (Ankunft)'].apply(lambda x:x.split(' (an')[1].split(')')[0])
+    data['Arrival Delay']=data['Abfahrt'].apply(lambda x:x.split(' (an')[1].split(')')[0])
+
 
     zf2 = zipfile.ZipFile('Mai-August_Arrivals-2.csv (1).zip') 
-    data2 = pd.read_csv(zf2.open('Mai-August_Arrivals-2.csv'))
+    data2 = pd.read_csv(zf2.open('Mai-August_Arrivals-2.csv'),usecols=['Ankunft','Zugnr.','von (Abfahrt)','Ankunftsbhf.','date'])
+            
+    data['Departure Station']=data['von (Abfahrt)'].apply(lambda x:x.split(' (')[0])
+    data['Expected Departure']=data['nach (Ankunft)'].apply(lambda x:x.split(' (an')[1].split(')')[0])
+    data['Departure Delay']=data['Ankunft'].apply(lambda x:x.split(' (an')[1].split(')')[0])
 
+            
+    
     #datatotal = data2.merge(data, on='Zugnr.')
 
     #datatotal['departure']=datatotal['von (Abfahrt)'].apply(lambda x:x.split('(ab ')[1].split(')')[0])
