@@ -88,7 +88,7 @@ def data_visualization():
     datatotal['day_of_week'] = datatotal['date'].dt.dayofweek
 
     fig2,ax2=plt.subplots(figsize=(11,7))
-    fig2 = px.box(datatotal, y="Delay",x="day_of_week")
+    fig2 = px.box(datatotal, y="Arrival Delay",x="day_of_week")
     st.plotly_chart(fig2)
 
 def prediction():
