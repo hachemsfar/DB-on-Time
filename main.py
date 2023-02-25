@@ -26,7 +26,7 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 def data_visualization():
     st.image("https://techlabs.org/static/tl-logo-cf3f70e8f5222649e6b06468adfae64c.png")
     st.header("Our Team")
-    st.image("faces.PNG")
+    #st.image("faces.PNG")
     st.header("Technologies Used:")
     st.image("logos.png")
     st.header("Data Sources:")
@@ -56,9 +56,7 @@ def data_visualization():
     filter_date=st.date_input('Choose a date to analyse')
     trip_id=datatotal[datatotal['date']==str(filter_date)]['Zugnr.'].unique().tolist()
     trip_id_filter=st.multiselect('Pick one', trip_id)
-    
-    #datatotal=datatotal[datatotal['date']==filter_date]
-            
+                
     checked=st.checkbox('Filtering?')
     if checked:
         if trip_id_filter!=[]:
@@ -67,9 +65,6 @@ def data_visualization():
         filter_date_month=str(filter_date)[:7]
         datatotal_month=datatotal[datatotal['date'].str.contains(str(filter_date_month))]
         datatotal=datatotal[datatotal['date']==str(filter_date)]
-    
-    #datatotal['departure']=datatotal['von (Abfahrt)'].apply(lambda x:x.split('(ab ')[1].split(')')[0])
-    #datatotal['Delay']=datatotal['Abfahrt'].apply(lambda x:int(x.split('(')[1][:-1]) if('(' in x)  else 0)
 
     st.write(datatotal)
 
