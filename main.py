@@ -52,11 +52,16 @@ def data_visualization():
     datatotal=datatotal.drop(['von (Abfahrt)', 'nach (Ankunft)'], axis=1)
     
     filter_date=st.date_input('Choose a date to analyse')
+    trip_id=datatotal[datatotal['date']==str(filter_date)]['Zugnr.'].unique().tolist()
+    trip_id_filter=st.multiselect('Pick one', trip_id)
+    
     #datatotal=datatotal[datatotal['date']==filter_date]
             
     checked=st.checkbox('Filtering?')
     if checked:
-        st.write(filter_date)        
+        st.write(filter_date)   
+        st.write(trip_id_filter)
+        datatotal=datatotal[datatotal[''Zugnr.'].isin(trip_id_filter)]
         datatotal=datatotal[datatotal['date']==str(filter_date)]
     
     #datatotal['departure']=datatotal['von (Abfahrt)'].apply(lambda x:x.split('(ab ')[1].split(')')[0])
