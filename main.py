@@ -98,7 +98,7 @@ def data_visualization():
 
 
     if checked:
-        st.header("Delay Percentage ("+st(filter_date_month)+")")
+        st.header("Delay Percentage ("+str(filter_date_month)+")")
         datatotal_month['delay?']=datatotal_month['Arrival Delay'].apply(lambda x: True if x>0 else False)
 
         fig4,ax4=plt.subplots(figsize=(11,7))
