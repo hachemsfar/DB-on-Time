@@ -74,7 +74,7 @@ def data_visualization():
     s = buffer.getvalue()
     st.text(s)
 
-    st.header("Histogram of Delay for Train Journeys in Germany")
+    st.header("Histogram of Delay for Train Journeys in Germany ("+str(filter_date)+")")
    
     fig1,ax1=plt.subplots(figsize=(11,7))
     ax1.hist(datatotal["Arrival Delay"], bins=50)
