@@ -73,6 +73,7 @@ def data_visualization():
     buffer = io.StringIO()
     datatotal.info(buf=buffer)
     s = buffer.getvalue()
+    st.text(s)
 
     st.header("Histogram of Delay for Train Journeys in Germany")
    
