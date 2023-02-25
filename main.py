@@ -36,7 +36,7 @@ def data_visualization():
 
     data['Final Station']=data['nach (Ankunft)'].apply(lambda x:x.split(' (')[0])
     data['Expected Arrival']=data['nach (Ankunft)'].apply(lambda x:x.split(' (an')[1].split(')')[0])
-    data['Arrival Delay']=data['Abfahrt'].apply(lambda x:x.split(' (an')[1].split(')')[0])
+    data['Arrival Delay']=data['Abfahrt'].apply(lambda x:int(x.split('(')[1][:-1]) if('(' in x)  else 0)
 
 
     zf2 = zipfile.ZipFile('Mai-August_Arrivals-2.csv (1).zip') 
@@ -44,7 +44,7 @@ def data_visualization():
             
     data2['Departure Station']=data2['von (Abfahrt)'].apply(lambda x:x.split(' (')[0])
     data2['Expected Departure']=data2['nach (Ankunft)'].apply(lambda x:x.split(' (an')[1].split(')')[0])
-    data2['Departure Delay']=data2['Ankunft'].apply(lambda x:x.split(' (an')[1].split(')')[0])
+    data2['Departure Delay']=data2['Ankunft'].apply(lambda x:int(x.split('(')[1][:-1]) if('(' in x)  else 0)
 
             
     
