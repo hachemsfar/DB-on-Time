@@ -90,12 +90,16 @@ def data_visualization():
     st.plotly_chart(fig2)
 
     datatotal['delay?']=datatotal['Arrival Delay'].apply(lambda x: True if x>0 else False)
-            
-    st.header("Delay Percentage (all dataset)")
-    fig5,ax5=plt.subplots(figsize=(11,7))
-    ax5.pie(datatotal['delay?'].value_counts(), labels=['No Delay','Delay'], autopct='%1.1f%%',shadow=True, startangle=90)
-    st.pyplot(fig5)
-
+    if checked:
+        st.header("Delay Percentage ("+str(filter_date)+")")
+        fig5,ax5=plt.subplots(figsize=(11,7))
+        ax5.pie(datatotal['delay?'].value_counts(), labels=['No Delay','Delay'], autopct='%1.1f%%',shadow=True, startangle=90)
+        st.pyplot(fig5)
+    else:
+        st.header("Delay Percentage (all dataset)")
+        fig5,ax5=plt.subplots(figsize=(11,7))
+        ax5.pie(datatotal['delay?'].value_counts(), labels=['No Delay','Delay'], autopct='%1.1f%%',shadow=True, startangle=90)
+        st.pyplot(fig5)
 
     if checked:
         st.header("Delay Percentage ("+str(filter_date_month)+")")
