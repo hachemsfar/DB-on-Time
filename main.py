@@ -93,13 +93,14 @@ def data_visualization():
     fig2,ax2=plt.subplots(figsize=(11,7))
     fig2 = px.box(datatotal, y="Arrival Delay",x="day_of_week")
     st.plotly_chart(fig2)
- 
-    datatotal_month['day']=datatotal_month['date'].apply(lambda x:int(x.split('-')[2]))
-    datatotal_month=datatotal_month.groupby(['day'])['Arrival Delay'].mean()
+            
+    if checked:
+        datatotal_month['day']=datatotal_month['date'].apply(lambda x:int(x.split('-')[2]))
+        datatotal_month=datatotal_month.groupby(['day'])['Arrival Delay'].mean()
 
-    fig3,ax3=plt.subplots(figsize=(11,7))  
-    ax3.plot(datatotal_month.index,datatotal_month)
-    st.pyplot(fig3)
+        fig3,ax3=plt.subplots(figsize=(11,7))  
+        ax3.plot(datatotal_month.index,datatotal_month)
+        st.pyplot(fig3)
  
                                                             
 def prediction():
