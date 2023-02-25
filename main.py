@@ -90,6 +90,12 @@ def data_visualization():
     st.plotly_chart(fig2)
             
     if checked:
+        datatotal_month['delay?']=datatotal_month['Arrival Delay'].apply(lambda x: True if x>0 else False)
+
+        fig4,ax4=plt.subplots(figsize=(11,7))
+        ax.pie(datatotal_month['delay?'].value_counts(), labels=, autopct='%1.1f%%',shadow=True, startangle=90)
+        st.pyplot(fig4)
+            
         datatotal_month['day']=datatotal_month['date'].apply(lambda x:int(x.split('-')[2]))
         datatotal_month=datatotal_month.groupby(['day'])['Arrival Delay'].mean()
 
