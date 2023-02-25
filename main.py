@@ -51,7 +51,7 @@ def data_visualization():
     datatotal = data2.merge(data, left_on=['Zugnr.','date','Ankunftsbhf.'],right_on=['Zugnr.','date','Abfahrtsbhf.'])
     datatotal=datatotal.drop(['von (Abfahrt)', 'nach (Ankunft)'], axis=1)
     
-    filter_date=st.date_input('Choose a date to analyse')
+    filter_date=st.sidebar.date_input('Choose a date to analyse', datetime.date(2022,5,5)
     #datatotal=datatotal[datatotal['date']==filter_date]
             
     checked=st.checkbox('Filtering?')
