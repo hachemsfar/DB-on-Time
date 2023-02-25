@@ -69,7 +69,9 @@ def data_visualization():
     st.write(datatotal)
 
     st.header("Summary of a DataFrame")
-    st.write(datatotal.info())
+    buffer = io.StringIO()
+    datatotal.info(buf=buffer)
+    s = buffer.getvalue()
 
     st.header("Histogram of Delay for Train Journeys in Germany")
    
