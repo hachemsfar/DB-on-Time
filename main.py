@@ -94,7 +94,7 @@ def data_visualization():
         st.write(datatotal_month['delay?'].value_counts())
             
         fig4,ax4=plt.subplots(figsize=(11,7))
-        ax.pie(datatotal_month['delay?'].value_counts(), labels=['Luna1','Luna2'], autopct='%1.1f%%',shadow=True, startangle=90)
+        ax4.pie(datatotal_month['delay?'].value_counts(), labels=['Delay','No Delay'], autopct='%1.1f%%',shadow=True, startangle=90)
         st.pyplot(fig4)
             
         datatotal_month['day']=datatotal_month['date'].apply(lambda x:int(x.split('-')[2]))
