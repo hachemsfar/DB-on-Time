@@ -43,7 +43,7 @@ def data_visualization():
     data2 = pd.read_csv(zf2.open('Mai-August_Arrivals-2.csv'),usecols=['Ankunft','Zugnr.','von (Abfahrt)','Ankunftsbhf.','date'])
             
     data2['Departure Station']=data2['von (Abfahrt)'].apply(lambda x:x.split(' (')[0])
-    data2['Expected Departure']=data2['von (Abfahrt)'].apply(lambda x:x.split(' (an')[1])
+    data2['Expected Departure']=data2['von (Abfahrt)'].apply(lambda x:x.split(' (ab')[1])
     data2['Departure Delay']=data2['Ankunft'].apply(lambda x:int(x.split('(')[1][:-1]) if('(' in x)  else 0)
 
             
