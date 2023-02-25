@@ -6,8 +6,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 from collections import defaultdict
-#from datetime import datetime
-import datetime
+from datetime import datetime
 
 hide_streamlit_style = """
             <style>
@@ -52,7 +51,7 @@ def data_visualization():
     datatotal = data2.merge(data, left_on=['Zugnr.','date','Ankunftsbhf.'],right_on=['Zugnr.','date','Abfahrtsbhf.'])
     datatotal=datatotal.drop(['von (Abfahrt)', 'nach (Ankunft)'], axis=1)
     
-    filter_date=st.sidebar.date_input('Choose a date to analyse', datetime.date(2022,5,5))
+    filter_date=st.date_input('Choose a date to analyse', datetime.date(2022,5,5))
     #datatotal=datatotal[datatotal['date']==filter_date]
             
     checked=st.checkbox('Filtering?')
