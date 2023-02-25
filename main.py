@@ -54,6 +54,11 @@ def data_visualization():
     filter_date=st.date_input('Choose a date to analyse')
     #datatotal=datatotal[datatotal['date']==filter_date]
             
+    checked=st.checkbox('Filtering?')
+    if checked:
+        st.write(filter_date)        
+        datatotal=datatotal[datatotal['date']==str(filter_date)]
+    
     #datatotal['departure']=datatotal['von (Abfahrt)'].apply(lambda x:x.split('(ab ')[1].split(')')[0])
     #datatotal['Delay']=datatotal['Abfahrt'].apply(lambda x:int(x.split('(')[1][:-1]) if('(' in x)  else 0)
 
