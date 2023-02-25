@@ -59,9 +59,8 @@ def data_visualization():
             
     checked=st.checkbox('Filtering?')
     if checked:
-        st.write(filter_date)   
-        st.write(trip_id_filter)
-        datatotal=datatotal[datatotal['Zugnr.'].isin(trip_id_filter)]
+        if trip_id_filter!=[]:
+            datatotal=datatotal[datatotal['Zugnr.'].isin(trip_id_filter)]
         datatotal=datatotal[datatotal['date']==str(filter_date)]
     
     #datatotal['departure']=datatotal['von (Abfahrt)'].apply(lambda x:x.split('(ab ')[1].split(')')[0])
