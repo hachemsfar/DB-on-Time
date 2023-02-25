@@ -7,6 +7,7 @@ import seaborn as sns
 import numpy as np
 from collections import defaultdict
 from datetime import datetime
+import io
 
 hide_streamlit_style = """
             <style>
