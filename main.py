@@ -65,7 +65,7 @@ def data_visualization():
             datatotal=datatotal[datatotal['Zugnr.'].isin(trip_id_filter)]
             
         filter_date_month=str(filter_date)[:7]
-        datatotal_month=datatotal[datatotal['date'].contain(str(filter_date_month))]
+        datatotal_month=datatotal[datatotal['date'].str.contain(str(filter_date_month)).any()]
         datatotal=datatotal[datatotal['date']==str(filter_date)]
     
     #datatotal['departure']=datatotal['von (Abfahrt)'].apply(lambda x:x.split('(ab ')[1].split(')')[0])
