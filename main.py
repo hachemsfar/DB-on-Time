@@ -100,9 +100,7 @@ def data_visualization():
     fig3,ax3=plt.subplots(figsize=(11,7))  
     ax3.plot(datatotal_month.index,datatotal_month)
     st.pyplot(fig3)
-
-plt.plot(data3.index,data3)
-plt.show()      
+ 
                                                             
 def prediction():
     st.header("Prediction")
