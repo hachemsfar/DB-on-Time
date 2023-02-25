@@ -63,6 +63,9 @@ def data_visualization():
     if checked:
         if trip_id_filter!=[]:
             datatotal=datatotal[datatotal['Zugnr.'].isin(trip_id_filter)]
+            
+        filter_date_month=filter_date[:7]
+        datatotal_month=datatotal[datatotal['date'].contain(str(filter_date_month)]
         datatotal=datatotal[datatotal['date']==str(filter_date)]
     
     #datatotal['departure']=datatotal['von (Abfahrt)'].apply(lambda x:x.split('(ab ')[1].split(')')[0])
@@ -90,7 +93,17 @@ def data_visualization():
     fig2,ax2=plt.subplots(figsize=(11,7))
     fig2 = px.box(datatotal, y="Arrival Delay",x="day_of_week")
     st.plotly_chart(fig2)
+ 
+    datatotal_month['day']=datatotal_month['date'].apply(lambda x:int(x.split('-')[2]))
+    datatotal_month=datatotal_month.groupby(['day'])['Arrival Delay'].mean()
 
+    fig3,ax3=plt.subplots(figsize=(11,7))  
+    ax3.plot(datatotal_month.index,datatotal_month)
+    st.pyplot(fig3)
+
+plt.plot(data3.index,data3)
+plt.show()      
+                                                            
 def prediction():
     st.header("Prediction")
  
