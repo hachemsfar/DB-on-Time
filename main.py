@@ -88,17 +88,27 @@ def data_visualization():
     fig2,ax2=plt.subplots(figsize=(11,7))
     fig2 = px.box(datatotal, y="Arrival Delay",x="day_of_week")
     st.plotly_chart(fig2)
+
+    datatotal['delay?']=datatotal['Arrival Delay'].apply(lambda x: True if x>0 else False)
             
+    st.header("Delay Percentage (all dataset)")
+    fig5,ax5=plt.subplots(figsize=(11,7))
+    ax5.pie(datatotal['delay?'].value_counts(), labels=['No Delay','Delay'], autopct='%1.1f%%',shadow=True, startangle=90)
+    st.pyplot(fig5)
+
+
     if checked:
+        st.header("Delay Percentage ("+st(filter_date_month)+")")
         datatotal_month['delay?']=datatotal_month['Arrival Delay'].apply(lambda x: True if x>0 else False)
-        st.write(datatotal_month['delay?'].value_counts())
-            
+
         fig4,ax4=plt.subplots(figsize=(11,7))
-        ax4.pie(datatotal_month['delay?'].value_counts(), labels=['Delay','No Delay'], autopct='%1.1f%%',shadow=True, startangle=90)
+        ax4.pie(datatotal_month['delay?'].value_counts(), labels=['No Delay','Delay'], autopct='%1.1f%%',shadow=True, startangle=90)
         st.pyplot(fig4)
             
         datatotal_month['day']=datatotal_month['date'].apply(lambda x:int(x.split('-')[2]))
         datatotal_month=datatotal_month.groupby(['day'])['Arrival Delay'].mean()
+            
+        st.header("Average Delay per day ("+st(filter_date_month)+")")
 
         fig3,ax3=plt.subplots(figsize=(11,7))  
         ax3.plot(datatotal_month.index,datatotal_month)
