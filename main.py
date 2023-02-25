@@ -49,6 +49,7 @@ def data_visualization():
             
     
     datatotal = data2.merge(data, left_on=['Zugnr.','date','Ankunftsbhf.'],right_on=['Zugnr.','date','Abfahrtsbhf.'])
+    datatotal=datatotal.drop(['von (Abfahrt)', 'nach (Ankunft)'], axis=1)
 
     #datatotal['departure']=datatotal['von (Abfahrt)'].apply(lambda x:x.split('(ab ')[1].split(')')[0])
     #datatotal['Delay']=datatotal['Abfahrt'].apply(lambda x:int(x.split('(')[1][:-1]) if('(' in x)  else 0)
