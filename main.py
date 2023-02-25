@@ -8,6 +8,7 @@ import numpy as np
 from collections import defaultdict
 from datetime import datetime
 import io
+import plotly.express as px
 
 hide_streamlit_style = """
             <style>
@@ -82,7 +83,14 @@ def data_visualization():
     ax1.set_xlabel("Arrival Delay (minutes)")
     ax1.set_ylabel("Frequency")
     st.pyplot(fig1)
-            
+
+    datatotal['date'] = pd.to_datetime(datatotal['date'])
+    datatotal['day_of_week'] = datatotal['date'].dt.dayofweek
+
+    fig2,ax2=plt.subplots(figsize=(11,7))
+    fig2 = px.box(datatotal, y="Delay",x="day_of_week")
+    st.plotly_chart(fig2)
+
 def prediction():
     st.header("Prediction")
  
