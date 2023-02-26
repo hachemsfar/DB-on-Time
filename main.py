@@ -112,7 +112,7 @@ def data_visualization():
         datatotal_month['day']=datatotal_month['date'].apply(lambda x:int(x.split('-')[2]))
         datatotal_month=datatotal_month.groupby(['day'])['Arrival Delay'].mean()
             
-        st.header("Average Delay per day ("+st(filter_date_month)+")")
+        st.header("Average Delay per day ("+str(filter_date_month)+")")
 
         fig3,ax3=plt.subplots(figsize=(11,7))  
         ax3.plot(datatotal_month.index,datatotal_month)
