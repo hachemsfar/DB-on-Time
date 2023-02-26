@@ -117,23 +117,21 @@ def data_visualization():
         fig3,ax3=plt.subplots(figsize=(11,7))  
         ax3.plot(datatotal_month.index,datatotal_month)
         st.pyplot(fig3)
- 
-                                                            
+            
+    datatotal['hour']=datatotal['Expected Arrival'].apply(lambda x:int(x.split(':')[0]))
+                                                          
+    datatotalgroup = datatotal[['Arrival Delay','Final Station','hour']].groupby(['Final Station','hour'], as_index=False).sum()
+    st.write(datatotalgroup)
+            
+    fig = plt.figure(figsize=(10, 4))
+    datatotalgroup = pd.pivot_table(datatotalgroup,'count','m','y')
+    sns.heatmap(df_p)
+    st.pyplot(fig)
+
+
 def prediction():
     st.header("Prediction")
-    import seaborn as sns
-    import pandas as pd
 
-    data = {'X': ['A', 'A', 'B', 'B', 'C', 'C'], 'Y': ['D', 'E', 'D', 'E', 'D', 'E'], 'Value': [1, 2, 3, 4, 5, 6]}
-    df = pd.DataFrame(data)
-
-    # Create a pivot table to reorganize the data
-    pivot = df.pivot(index='Y', columns='X', values='Value')
-    fig = plt.figure(figsize=(10, 4))
-
-    # Create the heatmap using seaborn
-    sns.heatmap(pivot, annot=True, cmap='Blues', fmt='d')
-    st.pyplot(fig)
 
 page_names_to_funcs = {
 "Data Visualization": data_visualization,
