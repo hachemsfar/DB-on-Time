@@ -120,11 +120,11 @@ def data_visualization():
             
     datatotal['hour']=datatotal['Expected Arrival'].apply(lambda x:int(x.split(':')[0]))
                                                           
-    datatotalgroup = datatotal[['Arrival Delay','Final Station','hour']].groupby(['Final Station','hour'], as_index=False).sum()
+    datatotalgroup = datatotal[['Arrival Delay','Final Station','hour']].groupby(['Final Station','hour'], as_index=False).mean()
     #st.write(datatotalgroup)
             
     fig = plt.figure(figsize=(10, 4))
-    datatotalgroup = pd.pivot_table(datatotalgroup.head(),'Arrival Delay','Final Station','hour')
+    datatotalgroup = pd.pivot_table(datatotalgroup.head(23),'Arrival Delay','Final Station','hour')
     sns.heatmap(datatotalgroup)
     st.pyplot(fig)
 
