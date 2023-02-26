@@ -121,7 +121,18 @@ def data_visualization():
                                                             
 def prediction():
     st.header("Prediction")
- 
+    import seaborn as sns
+    import pandas as pd
+
+    data = {'X': ['A', 'A', 'B', 'B', 'C', 'C'], 'Y': ['D', 'E', 'D', 'E', 'D', 'E'], 'Value': [1, 2, 3, 4, 5, 6]}
+    df = pd.DataFrame(data)
+
+    # Create a pivot table to reorganize the data
+    pivot = df.pivot(index='Y', columns='X', values='Value')
+
+    # Create the heatmap using seaborn
+    sns.heatmap(pivot, annot=True, cmap='Blues', fmt='d')
+
 page_names_to_funcs = {
 "Data Visualization": data_visualization,
 "Prediction": prediction
