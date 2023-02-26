@@ -129,9 +129,11 @@ def prediction():
 
     # Create a pivot table to reorganize the data
     pivot = df.pivot(index='Y', columns='X', values='Value')
+    fig = plt.figure(figsize=(10, 4))
 
     # Create the heatmap using seaborn
     sns.heatmap(pivot, annot=True, cmap='Blues', fmt='d')
+    st.pyplot(fig)
 
 page_names_to_funcs = {
 "Data Visualization": data_visualization,
