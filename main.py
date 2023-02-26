@@ -124,7 +124,7 @@ def data_visualization():
     st.write(datatotalgroup)
             
     fig = plt.figure(figsize=(10, 4))
-    datatotalgroup = pd.pivot_table(datatotalgroup,'count','m','y')
+    datatotalgroup = pd.pivot_table(datatotalgroup,'Arrival Delay','Final Station','hour')
     sns.heatmap(df_p)
     st.pyplot(fig)
 
