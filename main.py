@@ -118,6 +118,7 @@ def data_visualization():
         ax3.plot(datatotal_month.index,datatotal_month)
         st.pyplot(fig3)
             
+    st.header("Heatmap about average delay per hour and station")
     datatotal['hour']=datatotal['Expected Arrival'].apply(lambda x:int(x.split(':')[0]))
                                                           
     datatotalgroup = datatotal[['Arrival Delay','Final Station','hour']].groupby(['Final Station','hour'], as_index=False).mean()
