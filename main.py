@@ -26,7 +26,7 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 def data_visualization():
     st.image("https://techlabs.org/static/tl-logo-cf3f70e8f5222649e6b06468adfae64c.png")
     st.header("Our Team")
-    #st.image("faces.PNG")
+    st.image("teamphoto.PNG")
     st.header("Technologies Used:")
     st.image("logos.png")
     st.header("Data Sources:")
