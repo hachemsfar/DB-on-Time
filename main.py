@@ -178,9 +178,9 @@ def prediction():
     class_predictions_proba = pickled_model_1.predict_proba([predict_data])
             
     if class_predictions[0]==1:
-            st.success(str("Probably the train will arrive late "+str(class_predictions_proba[1])))        
+            st.success(str("Probably the train will arrive late "+str(class_predictions_proba[0][1])))        
     else:
-            st.success(str("Probably the train will arrive in time "+str(class_predictions_proba[0])))   
+            st.success(str("Probably the train will arrive in time "+str(class_predictions_proba[0][0])))   
 
             
     pickled_model_2 = pickle.load(open('model/LR3.pkl', 'rb'))
@@ -188,11 +188,11 @@ def prediction():
     class_predictions_proba = pickled_model_2.predict_proba([predict_data])
 
     if class_predictions[0]==0:
-            st.success(str("Probably the train will arrive in time "+str(class_predictions_prob[0])))        
+            st.success(str("Probably the train will arrive in time "+str(class_predictions_prob[0][0])))        
     elif class_predictions[0]==1:
-            st.success(str("Probably the train delay is short (between 0 and 5 minutes) "+str(class_predictions_proba[1])))   
+            st.success(str("Probably the train delay is short (between 0 and 5 minutes) "+str(class_predictions_proba[0][1])))   
     else:
-            st.success(str("Probably the train delay is long (more than 5 minutes) "+str(class_predictions_proba[2])))              
+            st.success(str("Probably the train delay is long (more than 5 minutes) "+str(class_predictions_proba[0][2])))              
             
 page_names_to_funcs = {
 "Data Visualization": data_visualization,
