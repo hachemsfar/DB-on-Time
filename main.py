@@ -134,8 +134,6 @@ def data_visualization():
 def prediction():
     predict_data=[]
     st.header("Prediction")
-    ad=st.number_input('Arrival Delay', 0)
-    predict_data.append(ad)
             
     L3= ['EC','FLX', 'IC', 'ICE', 'NJ', 'OTHERS', 'TGV', 'THA']
     train=st.selectbox('train type', L3)
