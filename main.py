@@ -9,6 +9,7 @@ from collections import defaultdict
 from datetime import datetime
 import io
 import plotly.express as px
+import pickle
 
 hide_streamlit_style = """
             <style>
