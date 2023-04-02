@@ -174,7 +174,15 @@ def prediction():
     st.write(predict_data)
     st.write(len(predict_data))
 
-    pickled_model_2 = pickle.load(open('model/GB2.pkl', 'rb'))
+    pickled_model_1 = pickle.load(open('model/LR2.pkl', 'rb'))
+    class_predictions = pickled_model_1.predict([predict_data])
+    if class_predictions[0]==1:
+            st.success(str("Normalladeeinrichtung"))        
+    else:
+            st.success(str("Schnellladeeinrichtung"))   
+
+            
+    pickled_model_2 = pickle.load(open('model/LR3.pkl', 'rb'))
     class_predictions = pickled_model_2.predict([predict_data])
     if class_predictions[0]==1:
             st.success(str("Normalladeeinrichtung"))        
