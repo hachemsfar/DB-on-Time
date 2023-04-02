@@ -132,8 +132,23 @@ def data_visualization():
 
 def prediction():
     st.header("Prediction")
-
-
+    st.number_input('Arrival Delay', 0)
+            
+    st.number_input('day',0, 31)
+    st.number_input('weekday',0, 6)
+            
+    st.number_input('hour departure',0, 23)
+    st.number_input('minute departure',0, 59)
+            
+    st.number_input('hour arrival',0, 23)
+    st.number_input('minute arrival',0, 59)
+    
+    L1=['Augsburg Hbf', 'Berlin Gesundbrunnen', 'Berlin Hbf', 'Berlin Hbf (tief)', 'Bremen Hbf', 'Dortmund Hbf', 'Dresden Hbf', 'Duisburg Hbf', 'Düsseldorf Hbf', 'Erfurt Hbf', 'Essen Hbf', 'Frankfurt(Main)Hbf', 'Freiburg(Breisgau) Hbf', 'Fulda', 'Göttingen', 'Hamburg Hbf', 'Hamburg-Altona', 'Hannover Hbf', 'Heidelberg Hbf', 'Karlsruhe Hbf', 'Köln Hbf', 'Köln Messe/Deutz Gl.11-12', 'Leipzig Hbf', 'Mainz Hbf', 'Mannheim Hbf', 'München Hbf', 'München Ost', 'Münster(Westf)Hbf', 'Nürnberg Hbf', 'Stuttgart Hbf']
+    st.selectbox('departure station', L1)
+    
+    L2=['Aachen Hbf', 'Amsterdam Centraal', 'Basel SBB', 'Berchtesgaden Hbf', 'Berlin Gesundbrunnen', 'Berlin Hbf', 'Berlin Ostbahnhof', 'Berlin Südkreuz', 'Berlin-Spandau', 'Bochum Hbf', 'Bologna Centrale', 'Bonn Hbf', 'Bonn-Bad Godesberg', 'Braunschweig Hbf', 'Bregenz', 'Bremen Hbf', 'Bremerhaven-Lehe', 'Bruxelles Midi', 'Budapest-Keleti', 'Chemnitz Hbf', 'Chur', 'Cottbus Hbf', 'Dortmund Hbf', 'Dresden Hbf', 'Duisburg Hbf', 'Düsseldorf Hbf', 'Emden Außenhafen', 'Emden Hbf', 'Erfurt Hbf', 'Essen Hbf', 'Flensburg', 'Frankfurt(M) Flughafen Fernbf', 'Frankfurt(Main)Hbf', 'Frankfurt(Main)Süd', 'Frankfurt(Main)West', 'Freiburg(Breisgau) Hbf', 'Friedberg(Hess)', 'Gera Hbf', 'Graz Hbf', 'Greifswald', 'Hamburg Dammtor', 'Hamburg Hbf', 'Hamburg-Altona', 'Hamburg-Harburg', 'Hannover Hbf', 'Heidelberg Hbf', 'Innsbruck Hbf', 'Interlaken Ost', 'Jena Paradies', 'Karlsruhe Hbf', 'Kassel-Wilhelmshöhe', 'Kiel Hbf', 'Klagenfurt Hbf', 'Koblenz Hbf', 'Konstanz', 'Köln Hbf', 'Köln Messe/Deutz Gl.11-12', 'Leipzig Hbf', 'Lübeck Hbf', 'Magdeburg Hbf', 'Mannheim Hbf', 'Marseille-St-Charles', 'Milano Porta Garibaldi', 'Mönchengladbach Hbf', 'München Hbf', 'Münster(Westf)Hbf', 'Norddeich', 'Norddeich Mole', 'Nürnberg Hbf', 'Oberstdorf', 'Offenburg', 'Oldenburg(Oldb)', 'Oldenburg(Oldb)Hbf', 'Ostseebad Binz', 'Paris Est', 'Paris Nord', 'Passau Hbf', 'Praha hl.n.', 'Rostock Hbf', 'Saarbrücken Hbf', 'Salzburg Hbf', 'Siegen', 'Singen(Hohentwiel)', 'Stralsund Hbf', 'Stuttgart Hbf', 'Tübingen Hbf', 'Ulm Hbf', 'Verona Porta Nuova', 'Warnemünde', 'Westerland(Sylt)', 'Wien Hbf', 'Wiesbaden Hbf', 'Wiesloch-Walldorf', 'Zürich HB']
+    st.selectbox('final station',L2)
+            
 page_names_to_funcs = {
 "Data Visualization": data_visualization,
 "Prediction": prediction
