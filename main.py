@@ -136,7 +136,7 @@ def prediction():
     ad=st.number_input('Arrival Delay', 0)
     predict_data.append(ad)
             
-    L3= ['FLX', 'IC', 'ICE', 'NJ', 'OTHERS', 'TGV', 'THA']
+    L3= ['EC','FLX', 'IC', 'ICE', 'NJ', 'OTHERS', 'TGV', 'THA']
     train=st.selectbox('train type', L3)
     List_train=[0]*len(L3)
     List_train[L3.index(train)]=1
@@ -159,7 +159,7 @@ def prediction():
     predict_data.append(ma)
 
 
-    L1=['Augsburg Hbf', 'Berlin Gesundbrunnen', 'Berlin Hbf', 'Berlin Hbf (tief)', 'Bremen Hbf', 'Dortmund Hbf', 'Dresden Hbf', 'Duisburg Hbf', 'Düsseldorf Hbf', 'Erfurt Hbf', 'Essen Hbf', 'Frankfurt(Main)Hbf', 'Freiburg(Breisgau) Hbf', 'Fulda', 'Göttingen', 'Hamburg Hbf', 'Hamburg-Altona', 'Hannover Hbf', 'Heidelberg Hbf', 'Karlsruhe Hbf', 'Köln Hbf', 'Köln Messe/Deutz Gl.11-12', 'Leipzig Hbf', 'Mainz Hbf', 'Mannheim Hbf', 'München Hbf', 'München Ost', 'Münster(Westf)Hbf', 'Nürnberg Hbf', 'Stuttgart Hbf']
+    L1=['Augsburg Hbf', 'Berlin Gesundbrunnen', 'Berlin Hbf', 'Berlin Hbf (tief)', 'Bremen Hbf', 'Dortmund Hbf', 'Dresden Hbf', 'Duisburg Hbf', 'Düsseldorf Hbf', 'Erfurt Hbf', 'Essen Hbf', 'Frankfurt(Main)Hbf', 'Freiburg(Breisgau) Hbf', 'Fulda', 'Göttingen', 'Hamburg Hbf', 'Hamburg-Altona', 'Hannover Hbf', 'Heidelberg Hbf', 'Karlsruhe Hbf', 'Köln Hbf', 'Köln Messe/Deutz Gl.11-12', 'Leipzig Hbf', 'Mainz Hbf', 'Mannheim Hbf', 'München Hbf', 'München Ost', 'Münster(Westf)Hbf', 'Nürnberg Hbf', 'Stuttgart Hbf','Würzburg Hbf']
     departure=st.selectbox('departure station', L1)
     List_departure=[0]*len(L1)
     List_departure[L1.index(departure)]=1
