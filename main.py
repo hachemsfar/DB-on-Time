@@ -147,11 +147,13 @@ def prediction():
     departure=st.selectbox('departure station', L1)
     List_departure=[0]*len(L1)
     List_departure[L1.index(departure)]=1
+    st.write(List_departure)
 
     L2=['Aachen Hbf', 'Amsterdam Centraal', 'Basel SBB', 'Berchtesgaden Hbf', 'Berlin Gesundbrunnen', 'Berlin Hbf', 'Berlin Ostbahnhof', 'Berlin Südkreuz', 'Berlin-Spandau', 'Bochum Hbf', 'Bologna Centrale', 'Bonn Hbf', 'Bonn-Bad Godesberg', 'Braunschweig Hbf', 'Bregenz', 'Bremen Hbf', 'Bremerhaven-Lehe', 'Bruxelles Midi', 'Budapest-Keleti', 'Chemnitz Hbf', 'Chur', 'Cottbus Hbf', 'Dortmund Hbf', 'Dresden Hbf', 'Duisburg Hbf', 'Düsseldorf Hbf', 'Emden Außenhafen', 'Emden Hbf', 'Erfurt Hbf', 'Essen Hbf', 'Flensburg', 'Frankfurt(M) Flughafen Fernbf', 'Frankfurt(Main)Hbf', 'Frankfurt(Main)Süd', 'Frankfurt(Main)West', 'Freiburg(Breisgau) Hbf', 'Friedberg(Hess)', 'Gera Hbf', 'Graz Hbf', 'Greifswald', 'Hamburg Dammtor', 'Hamburg Hbf', 'Hamburg-Altona', 'Hamburg-Harburg', 'Hannover Hbf', 'Heidelberg Hbf', 'Innsbruck Hbf', 'Interlaken Ost', 'Jena Paradies', 'Karlsruhe Hbf', 'Kassel-Wilhelmshöhe', 'Kiel Hbf', 'Klagenfurt Hbf', 'Koblenz Hbf', 'Konstanz', 'Köln Hbf', 'Köln Messe/Deutz Gl.11-12', 'Leipzig Hbf', 'Lübeck Hbf', 'Magdeburg Hbf', 'Mannheim Hbf', 'Marseille-St-Charles', 'Milano Porta Garibaldi', 'Mönchengladbach Hbf', 'München Hbf', 'Münster(Westf)Hbf', 'Norddeich', 'Norddeich Mole', 'Nürnberg Hbf', 'Oberstdorf', 'Offenburg', 'Oldenburg(Oldb)', 'Oldenburg(Oldb)Hbf', 'Ostseebad Binz', 'Paris Est', 'Paris Nord', 'Passau Hbf', 'Praha hl.n.', 'Rostock Hbf', 'Saarbrücken Hbf', 'Salzburg Hbf', 'Siegen', 'Singen(Hohentwiel)', 'Stralsund Hbf', 'Stuttgart Hbf', 'Tübingen Hbf', 'Ulm Hbf', 'Verona Porta Nuova', 'Warnemünde', 'Westerland(Sylt)', 'Wien Hbf', 'Wiesbaden Hbf', 'Wiesloch-Walldorf', 'Zürich HB']
     final=st.selectbox('final station',L2)
     List_final=[0]*len(L2)
     List_final[L2.index(final)]=1
+    st.write(List_final)
 
             
 page_names_to_funcs = {
