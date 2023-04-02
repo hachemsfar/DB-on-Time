@@ -136,6 +136,13 @@ def prediction():
     ad=st.number_input('Arrival Delay', 0)
     predict_data.append(ad)
             
+    L3= ['FLX', 'IC', 'ICE', 'NJ', 'OTHERS', 'TGV', 'THA']
+    train=st.selectbox('train type', L3)
+    List_train=[0]*len(L3)
+    List_train[L3.index(train)]=1
+
+    predict_data=predict_data+List_train
+
     d=st.number_input('day',0, 31)
     w=st.number_input('weekday',0, 6)
     predict_data.append(d)
