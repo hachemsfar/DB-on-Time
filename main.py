@@ -175,6 +175,13 @@ def prediction():
     st.write(predict_data)
     st.write(len(predict_data))
 
+    pickled_model_2 = pickle.load(open('model/GB2.pkl', 'rb'))
+    class_predictions = pickled_model_2.predict([predict_data])
+    if class_predictions[0]==1:
+            st.success(str("Normalladeeinrichtung"))        
+    else:
+            st.success(str("Schnellladeeinrichtung"))   
+            
 page_names_to_funcs = {
 "Data Visualization": data_visualization,
 "Prediction": prediction
