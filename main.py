@@ -201,17 +201,19 @@ def performance():
     st.header("Data Preprocessing")
 
     st.header("ML Model Workflow")
-    st.markdown('**Dropped these columns:** \n Betreiber,Straße,Hausnummer,Adresszusatz,Postleitzahl,Ort,Bundesland,Kreis/kreisfreie Stadt,Public Key1,Public Key2,Public Key3,Public Key4')
-    st.markdown('**Converting:** \n longitute and latitude from string to float | type of charging; 1 if Normalladeeinrichtung 0 if Schnellladeeinrichtung')
-    st.markdown('**New feature created:** \n Extract year value from Inbetriebnahmedatum column')
-    st.markdown('**Using longitute and latitude and Kmeans (K=5):** \n deutschland was divided into 5 areas like in the photo')
-    st.markdown('**One hot encoding applied on:** \n Plug type | Cluster Group ')
+    st.write("""To begin our analysis, we first extracted data from the Zugfinder website and saved it as a CSV file. Next, we loaded this file into a Pandas dataframe for further processing.
 
-    #st.image("kmeans_result.PNG")
-    st.markdown('**_This is the final dataframe used for building the 2 models_**')
-    #st.image("dataframe_After_dataPreprocessing.PNG")
-    st.success("Normalladeeinrichtung Prediction(Binary classification): Algorithm used: Logistic Regression | Accuracy: 98.856% | F1 Score: 98.853% ")
-    st.success("Anschlussleistung Prediction(Multiclass classification, 13 class): Algorithm used: SVM | Accuracy: 58.256% | F1 Score: 51.33% ")
+For the train types, we transformed the categorical data into dummy variables. We also converted the departure and arrival station columns into dummy variables, which allowed us to include this information in our analysis.
+
+To make the date column more useful, we converted it into a datetime format. We then extracted the hour and minute of departure and arrival times from the "Abfahrt" column, and calculated the total delay based on the "Ankunft" column.
+
+To prepare our data for modeling, we split the dataset into a training set (70%) and a testing set (30%).
+
+Using the training data, we trained several classification models to predict whether there would be a delay or not, as well as whether the delay would be short or long. The models we used included gradient boosting, random forest, K-nearest neighbors, logistic regression, and support vector classification.
+
+To evaluate our models, we used a variety of metrics, including accuracy, F1 score, and classification reports. We also generated confusion matrices to visualize the performance of our models.
+
+Overall, these data preprocessing steps allowed us to clean and transform our raw data into a format that was suitable for machine learning analysis.""")
 
         
     st.subheader("Model Performance")
