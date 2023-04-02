@@ -200,7 +200,7 @@ def prediction():
 def performance():
     st.header("Data Preprocessing")
 
-st.header("ML Model Workflow")
+    st.header("ML Model Workflow")
     st.markdown('**Dropped these columns:** \n Betreiber,Straße,Hausnummer,Adresszusatz,Postleitzahl,Ort,Bundesland,Kreis/kreisfreie Stadt,Public Key1,Public Key2,Public Key3,Public Key4')
     st.markdown('**Converting:** \n longitute and latitude from string to float | type of charging; 1 if Normalladeeinrichtung 0 if Schnellladeeinrichtung')
     st.markdown('**New feature created:** \n Extract year value from Inbetriebnahmedatum column')
