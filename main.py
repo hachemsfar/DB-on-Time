@@ -149,16 +149,16 @@ def prediction():
     predict_data.append(w)
             
     #hd=st.number_input('hour departure',0, 23)
-    ddd=st.time_input('departure time')
+    ddd=st.time_input('Departure time')
     #md=st.number_input('minute departure',0, 59)
-    predict_data.append(int(ddd.split(":")[0]))
-    predict_data.append(int(ddd.split(":")[1]))
+    predict_data.append(ddd.hour)
+    predict_data.append(ddd.minute)
             
     #ha=st.number_input('hour arrival',0, 23)
-    aaa=st.time_input('arrival time')
+    aaa=st.time_input('Arrival time')
     #ma=st.number_input('minute arrival',0, 59)
-    predict_data.append(int(aaa.split(":")[0]))
-    predict_data.append(int(aaa.split(":")[1]))
+    predict_data.append(aaa.hour)
+    predict_data.append(aaa.minute)
 
 
     L1=['Augsburg Hbf', 'Berlin Gesundbrunnen', 'Berlin Hbf', 'Berlin Hbf (tief)', 'Bremen Hbf', 'Dortmund Hbf', 'Dresden Hbf', 'Duisburg Hbf', 'Düsseldorf Hbf', 'Erfurt Hbf', 'Essen Hbf', 'Frankfurt(Main)Hbf', 'Freiburg(Breisgau) Hbf', 'Fulda', 'Göttingen', 'Hamburg Hbf', 'Hamburg-Altona', 'Hannover Hbf', 'Heidelberg Hbf', 'Karlsruhe Hbf', 'Köln Hbf', 'Köln Messe/Deutz Gl.11-12', 'Leipzig Hbf', 'Mainz Hbf', 'Mannheim Hbf', 'München Hbf', 'München Ost', 'Münster(Westf)Hbf', 'Nürnberg Hbf', 'Stuttgart Hbf','Würzburg Hbf']
