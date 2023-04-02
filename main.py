@@ -196,10 +196,50 @@ def prediction():
             st.success(str("The train delay will be short (between 0 and 5 minutes) %"+str(class_predictions_proba[0][1]*100)[:5]))   
     else:
             st.success(str("The train delay will be long (more than 5 minutes) %"+str(class_predictions_proba[0][2]*100)[:5]))              
-            
+
+def performance():
+    st.header("Data Preprocessing")
+
+    st.header("Anschlussleistung/Normalladeeinrichtung Prediction")        
+    st.header("ML Model Workflow")
+    st.markdown('**Dropped these columns:** \n Betreiber,Straße,Hausnummer,Adresszusatz,Postleitzahl,Ort,Bundesland,Kreis/kreisfreie Stadt,Public Key1,Public Key2,Public Key3,Public Key4')
+    st.markdown('**Converting:** \n longitute and latitude from string to float | type of charging; 1 if Normalladeeinrichtung 0 if Schnellladeeinrichtung')
+    st.markdown('**New feature created:** \n Extract year value from Inbetriebnahmedatum column')
+    st.markdown('**Using longitute and latitude and Kmeans (K=5):** \n deutschland was divided into 5 areas like in the photo')
+    st.markdown('**One hot encoding applied on:** \n Plug type | Cluster Group ')
+
+    st.image("kmeans_result.PNG")
+    st.markdown('**_This is the final dataframe used for building the 2 models_**')
+    st.image("dataframe_After_dataPreprocessing.PNG")
+    st.success("Normalladeeinrichtung Prediction(Binary classification): Algorithm used: Logistic Regression | Accuracy: 98.856% | F1 Score: 98.853% ")
+    st.success("Anschlussleistung Prediction(Multiclass classification, 13 class): Algorithm used: SVM | Accuracy: 58.256% | F1 Score: 51.33% ")
+
+        
+    st.header("Model Performance")
+    st.subheader("Binary Classification: Either normalcharger or schnellcharger")
+    st.success("Logistic Regression:")
+    st.write("Accuracy: 98.85%")
+    st.write("F1 Score: 97.8%")
+        
+    st.success("SVC:")
+    st.write("Accuracy: 99.21%")
+    st.write("F1 Score: 98.5%")
+
+    st.subheader("Multiclass Classification(13 class):Anschlussleistung")
+    st.success("Logistic Regression:")
+    st.write("Accuracy: 59.14%")
+    st.write("F1 Score: 32.5%")
+
+    st.success("SVC:")
+    st.write("Accuracy: 63.35%")
+    st.write("F1 Score: 52.24%")
+        
+    st.success("We build different ML models using most popular ML algorithms; some models failed (like gradient boosting); we tried to look for the better hyperparameteres and at the end of we choose the models that have the best F1 score")
+
 page_names_to_funcs = {
 "Data Visualization": data_visualization,
-"Prediction": prediction
+"Prediction": prediction,
+"Model Performance": performance
 }
 
 demo_name = st.sidebar.selectbox("Choose the App", page_names_to_funcs.keys())
