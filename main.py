@@ -165,7 +165,9 @@ def prediction():
     List_final[L2.index(final)]=1
 
     predict_data=predict_data+List_final
-            
+    st.write(predict_data)
+    st.write(len(predict_data))
+
 page_names_to_funcs = {
 "Data Visualization": data_visualization,
 "Prediction": prediction
