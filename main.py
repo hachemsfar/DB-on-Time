@@ -200,8 +200,7 @@ def prediction():
 def performance():
     st.header("Data Preprocessing")
 
-    st.header("Anschlussleistung/Normalladeeinrichtung Prediction")        
-    st.header("ML Model Workflow")
+st.header("ML Model Workflow")
     st.markdown('**Dropped these columns:** \n Betreiber,Straße,Hausnummer,Adresszusatz,Postleitzahl,Ort,Bundesland,Kreis/kreisfreie Stadt,Public Key1,Public Key2,Public Key3,Public Key4')
     st.markdown('**Converting:** \n longitute and latitude from string to float | type of charging; 1 if Normalladeeinrichtung 0 if Schnellladeeinrichtung')
     st.markdown('**New feature created:** \n Extract year value from Inbetriebnahmedatum column')
@@ -215,8 +214,7 @@ def performance():
     st.success("Anschlussleistung Prediction(Multiclass classification, 13 class): Algorithm used: SVM | Accuracy: 58.256% | F1 Score: 51.33% ")
 
         
-    st.header("Model Performance")
-    st.subheader("Binary Classification: Either normalcharger or schnellcharger")
+    st.subheader("Model Performance")
     st.success("Logistic Regression:")
     st.write("Accuracy: 98.85%")
     st.write("F1 Score: 97.8%")
@@ -235,6 +233,8 @@ def performance():
     st.write("F1 Score: 52.24%")
         
     st.success("We build different ML models using most popular ML algorithms; some models failed (like gradient boosting); we tried to look for the better hyperparameteres and at the end of we choose the models that have the best F1 score")
+
+    st.subheader("Future Work")
 
 page_names_to_funcs = {
 "Data Visualization": data_visualization,
