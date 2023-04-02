@@ -134,7 +134,8 @@ def data_visualization():
 def prediction():
     predict_data=[]
     st.header("Prediction")
-            
+    st.subheader("Logistic Regression")
+
     L3= ['EC','FLX', 'IC', 'ICE', 'NJ', 'OTHERS', 'TGV', 'THA']
     train=st.selectbox('train type', L3)
     List_train=[0]*len(L3)
