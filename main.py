@@ -217,26 +217,45 @@ Overall, these data preprocessing steps allowed us to clean and transform our ra
 
         
     st.subheader("Model Performance")
+    st.subheader("Binary Classification")
+
     st.success("Logistic Regression:")
-    st.write("Accuracy: 98.85%")
-    st.write("F1 Score: 97.8%")
+    st.write("Accuracy: 77%")
+    st.write("F1 Score: 69%")
         
-    st.success("SVC:")
-    st.write("Accuracy: 99.21%")
-    st.write("F1 Score: 98.5%")
+    st.success("Random Forest:")
+    st.write("Accuracy: 74%")
+    st.write("F1 Score: 73%")
 
-    st.subheader("Multiclass Classification(13 class):Anschlussleistung")
+    st.success("Gradent Boosting:")
+    st.write("Accuracy: 77%")
+    st.write("F1 Score: 67%")
+            
+    st.success("Support Vector Machine:")
+    st.write("Accuracy: 77%")
+    st.write("F1 Score: 67%")
+
+    st.subheader("Multiclass Classification")
+
     st.success("Logistic Regression:")
-    st.write("Accuracy: 59.14%")
-    st.write("F1 Score: 32.5%")
-
-    st.success("SVC:")
-    st.write("Accuracy: 63.35%")
-    st.write("F1 Score: 52.24%")
+    st.write("Accuracy: 49%")
+    st.write("F1 Score: 42%")
         
-    st.success("We build different ML models using most popular ML algorithms; some models failed (like gradient boosting); we tried to look for the better hyperparameteres and at the end of we choose the models that have the best F1 score")
+    st.success("Random Forest:")
+    st.write("Accuracy: 51%")
+    st.write("F1 Score: 50%")
 
-    st.subheader("Future Work")
+    st.success("Gradent Boosting:")
+    st.write("Accuracy: 50%")
+    st.write("F1 Score: 40%")
+            
+    st.success("Support Vector Machine:")
+    st.write("Accuracy: 47%")
+    st.write("F1 Score: 31%")
+
+    st.subheader("Future Work:")
+
+    st.subheader("Related links:")
 
 page_names_to_funcs = {
 "Data Visualization": data_visualization,
