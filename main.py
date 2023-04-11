@@ -129,7 +129,13 @@ def data_visualization():
     datatotalgroup = pd.pivot_table(datatotalgroup.head(23),'Arrival Delay','Final Station','hour')
     sns.heatmap(datatotalgroup)
     st.pyplot(fig)
+    
+    st.header("# of trains from each station")
+    st.image("heatmap visual.JPG")
+    st.image("number of trains from each departure station.JPG")
 
+    st.header("# of trains departing from each station per week day")
+    st.image("heatmap visual.JPG")
 
 def prediction():
     predict_data=[]
@@ -252,10 +258,6 @@ Overall, these data preprocessing steps allowed us to clean and transform our ra
     st.success("Support Vector Machine:")
     st.write("Accuracy: 47%")
     st.write("F1 Score: 31%")
-
-    st.subheader("Future Work:")
-
-    st.subheader("Related links:")
 
 page_names_to_funcs = {
 "Data Visualization": data_visualization,
