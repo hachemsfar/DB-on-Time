@@ -134,11 +134,10 @@ def data_visualization():
     st.pyplot(fig)
     
     st.header("# of trains from each station")
-    st.image("heatmap visual.JPG")
     st.image("number of trains from each departure station.JPG")
 
     st.header("# of trains departing from each station per week day")
-    st.image("heatmap visual.JPG")
+    st.image("heatmap visual.JPG",width=400)
 
 def prediction():
     predict_data=[]
