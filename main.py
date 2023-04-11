@@ -71,7 +71,10 @@ def data_visualization():
 
     st.header("Summary of a DataFrame")
     buffer = io.StringIO()
-    datatotal.info(buf=buffer)
+    datatotal2=datatotal
+    datatotal2.columns=["arrival time","Train number","arrival station","date","Departure Station","Expected Departure","Departure Delay","Departure","Departure Station","Final Station","Expected Arrival","Arrival Delay"]
+            
+    datatotal2.info(buf=buffer)
     s = buffer.getvalue()
     st.text(s)
 
