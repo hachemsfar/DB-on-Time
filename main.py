@@ -137,7 +137,7 @@ def data_visualization():
     st.image("number of trains from each departure station.JPG")
 
     st.header("# of trains departing from each station per week day")
-    st.image("heatmap visual.JPG",width=400)
+    st.image("heatmap visual.JPG",width=2300)
 
 def prediction():
     predict_data=[]
